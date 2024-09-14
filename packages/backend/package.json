@@ -1,0 +1,20 @@
+{
+  "name": "@unitconverter/backend",
+  "version": "1.0.0",
+  "packageManager": "yarn@4.4.1",
+  "scripts": {
+    "build": "tsc --project tsconfig.prod.json",
+    "launch": "node dist/index",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@unitconverter/common": "*"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.5.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.2"
+  }
+}
