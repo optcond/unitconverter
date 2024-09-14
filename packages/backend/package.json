@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc --project tsconfig.prod.json",
     "launch": "node dist/index",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rm -rf ./dist"
   },
   "dependencies": {
     "@unitconverter/common": "*"

@@ -5,7 +5,8 @@
   "main": "dist/index",
   "types": "dist/index",
   "scripts": {
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "clean": "rm -rf ./dist"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
