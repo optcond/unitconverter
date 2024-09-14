@@ -16,6 +16,8 @@ TBA
 ## Installation
 ```
 yarn workspaces foreach --all run build
+# to clean /dist
+yarn workspaces foreach --all run clean 
 ```
 ## Usage
 ```
