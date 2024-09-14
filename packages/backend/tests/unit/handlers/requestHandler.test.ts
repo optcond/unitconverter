@@ -1,6 +1,6 @@
 import { ServerResponse } from "http";
 import { requestHandler } from "../../../src/handlers/requestHandler";
-import { sendResponse } from "../../../src/lib/helper";
+import { sendResponse, setCors } from "../../../src/lib/helper";
 import { IncomingMessageWithBody } from "../../../src/types";
 import { router } from "../../../src/handlers/router";
 import { routes } from "../../../src/handlers/routes";
@@ -8,6 +8,7 @@ import { EventEmitter } from "stream";
 
 jest.mock("../../../src/lib/helper", () => ({
   sendResponse: jest.fn(),
+  setCors: jest.fn(),
 }));
 jest.mock("../../../src/handlers/router", () => ({
   router: jest.fn(),
@@ -29,6 +30,7 @@ describe(`Sever request event handling`, () => {
 
   it(`should handle bad content type`, () => {
     req.headers = { "content-type": "application/text" };
+    req.method = "POST";
     requestHandler(req, res);
 
     expect(sendResponse).toHaveBeenCalledWith(expect.anything(), 400, {
